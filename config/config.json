@@ -1,0 +1,44 @@
+{
+  "groom": "Nam",
+  "bride": "Phương Anh",
+  "wedding_date": "2026-02-14",
+  "wedding_time": "18:00",
+  "wedding_address": "Trung tâm tiệc cưới Diamond Palace, TP Vinh",
+  "wedding_address_full": "Diamond Palace, Đường Lê Lợi, TP Vinh, Nghệ An",
+  "google_maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.123456789!2d105.12345678!3d18.67891234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQwJzQ0LjEiTiAxMDXCsDA3JzI4LjQiRQ!5e0!3m2!1svi!2s!4v1234567890123!5m2!1svi!2s",
+  "wedding_image": "assets/images/wedding-main.jpg",
+  "story_timeline": [
+    {
+      "date": "2023-01-15",
+      "title": "Lần đầu gặp gỡ",
+      "description": "Chúng mình gặp nhau lần đầu tiên tại một quán cafe nhỏ ở Hà Nội. Đó là một ngày mưa nhẹ, và cả hai đều đến sớm hơn hẹn.",
+      "image": "assets/images/first-meet.jpg"
+    },
+    {
+      "date": "2023-06-20",
+      "title": "Chuyến đi đầu tiên",
+      "description": "Chuyến du lịch đầu tiên cùng nhau đến Đà Lạt. Những kỷ niệm đẹp bên hoa, núi đồi và ánh nắng sớm mai.",
+      "image": "assets/images/dalat-trip.jpg"
+    },
+    {
+      "date": "2024-12-25",
+      "title": "Ngày cầu hôn",
+      "description": "Một ngày Giáng sinh đặc biệt, anh đã quỳ gối cầu hôn em dưới ánh đèn lấp lánh. Em đã nói 'Có' trong hạnh phúc tràn ngập.",
+      "image": "assets/images/proposal.jpg"
+    }
+  ],
+  "album_images": [
+    "assets/images/pic1.jpg",
+    "assets/images/pic2.jpg",
+    "assets/images/pic3.jpg",
+    "assets/images/pic4.jpg",
+    "assets/images/pic5.jpg",
+    "assets/images/pic6.jpg",
+    "assets/images/pic7.jpg",
+    "assets/images/pic8.jpg"
+  ],
+  "google_sheet_guestbook_json": "https://script.google.com/macros/s/YOUR_GUESTBOOK_SCRIPT_ID/exec",
+  "google_sheet_rsvp_json": "https://script.google.com/macros/s/YOUR_RSVP_SCRIPT_ID/exec",
+  "google_form_guestbook": "https://docs.google.com/forms/d/e/YOUR_GUESTBOOK_FORM_ID/viewform",
+  "google_form_rsvp": "https://docs.google.com/forms/d/e/YOUR_RSVP_FORM_ID/viewform"
+}

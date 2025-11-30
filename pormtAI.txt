@@ -1,0 +1,76 @@
+FORM YÊU CẦU TẠO WEBSITE ĐÁM CƯỚI – DÀNH CHO AI
+
+1. Mục tiêu:
+Tạo website đám cưới đa trang, dùng Bootstrap 5, dữ liệu qua file config.json, lưu lời chúc và xác nhận tham dự bằng Google Sheet, có trang thống kê số người tham dự. Website phải deploy được trên GitHub Pages.
+
+2. Công nghệ:
+- HTML5
+- Bootstrap 5 (CDN)
+- JavaScript thuần
+- Google Sheet (Google Form → Sheet → JSON)
+- Lightbox (Bootstrap hoặc GLightbox)
+
+3. Cấu trúc thư mục:
+assets/css/style.css
+assets/js/main.js
+assets/js/guestbook.js
+assets/js/rsvp.js
+assets/images/*
+config/config.json
+index.html
+story.html
+album.html
+info.html
+invite.html
+guestbook.html
+rsvp-stats.html
+README.md
+
+4. File config.json mẫu:
+{
+  "groom": "Nam",
+  "bride": "Phương Anh",
+  "wedding_date": "2026-02-14",
+  "wedding_address": "Trung tâm tiệc cưới Diamond Palace, TP Vinh",
+  "album_images": [
+    "assets/images/pic1.jpg",
+    "assets/images/pic2.jpg"
+  ],
+  "google_sheet_guestbook_json": "LINK_JSON_GUESTBOOK",
+  "google_sheet_rsvp_json": "LINK_JSON_RSVP"
+}
+
+5. Trang cần tạo:
+- index.html:
+  Ảnh cưới, tên cô dâu chú rể, ngày cưới, countdown, số người đăng kí tham dự (fetch từ sheet)
+- story.html:
+  Timeline yêu nhau → cầu hôn
+- album.html:
+  Grid + Lightbox, ảnh lấy từ config.json
+- info.html:
+  Thông tin lễ cưới + Google Maps
+- invite.html:
+  Thiệp mời + QR website
+- guestbook.html:
+  Form gửi lời chúc → Google Form
+  Hiển thị lời chúc → fetch JSON từ sheet
+- rsvp-stats.html:
+  Lấy dữ liệu RSVP từ Google Sheet → thống kê tổng số người tham dự + bảng chi tiết
+
+6. Form RSVP:
+- Họ tên
+- Số lượng khách
+- Có/không tham dự
+- Ghi chú
+Dữ liệu gửi vào Google Form.
+
+7. Output AI cần sinh:
+- Sinh toàn bộ project theo cấu trúc
+- Bootstrap 5
+- HTML + CSS + JS
+- config.json
+- Placeholder Google Sheet URLs
+- README.md hướng dẫn setup Google Form + deploy GitHub Pages.
+
+Kết thúc form.
+
