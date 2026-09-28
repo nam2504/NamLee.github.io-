@@ -10,7 +10,26 @@ Thang điểm (1–5): **D** = nhu cầu, **C** = khoảng trống cạnh tranh 
 
 ---
 
-## Top 10 (xếp theo mức khả thi)
+## ⭐ Top tổng hợp mới nhất (sau đợt 3: game + app tiêu dùng)
+
+| Hạng | Ý tưởng | Nhóm | Tổng | Xác suất | Ghi chú |
+|---|---|---|---|---|---|
+| 1 | **Thầy Bói AI + Thẻ Hợp Tuổi** (A1 + A9: trang hợp tuổi kéo traffic SEO, chat tử vi AI thu phí) | App | 18/17 | Trung bình | Nhu cầu rất lớn (tuvi.vn và xemtuong khoảng 0,7 triệu lượt/tháng). Chi phí LLM dưới $0,01 mỗi lượt. Chỉ cần web + VietQR |
+| 2 | **Luyện nói tiếng Hàn/Nhật bằng AI voice** (A11) | App | 19 | Trung bình | Người học sẵn sàng trả tiền cao (Speak đạt ARR trên $100M). Rủi ro: chi phí voice $0,02–0,05/phút, nên phải giới hạn số phút |
+| 3 | **Rizz VN: AI gợi ý trả lời tin nhắn crush** (A16) | App | 19 | Trung bình | Chi phí rẻ nhất, làm trong 1 cuối tuần. Rizz khoảng $190k/tháng (số liệu 2024) |
+| 4 | **Daily toán/logic cho học sinh, xếp hạng theo trường** (G14) | Game | 19 | Trung bình | Kiểu Nerdle. Đề sinh tự động, gần như không cần vận hành |
+| 5 | **Idle tycoon quán phở, làm web rồi lên Steam** (G4) | Game | 18 | Trung bình | Game chơi đơn nên nhẹ pháp lý, bán toàn cầu. Trung vị doanh thu indie trên Steam thấp ($5–15k) |
+| 6 | Sao kê PDF → Excel (đợt 2) | Tool | 19 | Trung bình | Thuần backend, SEO đuôi dài |
+| 7 | Truyện ru ngủ AI bằng giọng ba mẹ (A14) | App | 18 | Trung bình | Phụ huynh sẵn sàng trả tiền. Rủi ro pháp lý: giọng nói là dữ liệu sinh trắc, người dùng là trẻ em |
+| 8 | Wizard hoàn nenkin (đợt 2) | Tool | 18 | Trung bình | Người dùng trả 300–500k/lần |
+| 9 | Ảnh AI Tết/áo dài, nhắm Tết 2027 (A5) | App | 17 | Trung bình | Chỉ theo mùa. Gemini miễn phí đang ép giá |
+| 10 | Wordle tiếng Việt (G1) | Game | 17 | Trung bình | Gần như 0 chi phí. Đã có bản mã nguồn mở, quảng cáo VN trả thấp |
+
+> Bài học quan trọng: (1) eCPM rewarded ad ở VN khoảng $2,2, Mỹ khoảng $16–19 (chênh ~8 lần), nên game kiếm tiền bằng quảng cáo nên nhắm thị trường toàn cầu. (2) Theo NĐ 147/2024, game nhiều người chơi (G1) ở VN cần giấy phép và phải đứng tên doanh nghiệp, game bài bị cấm hoàn toàn, vật phẩm ảo không được quy đổi ra tiền. (3) Zalo Mini App không cho gắn quảng cáo nếu chưa được duyệt. (4) Luật AI 134/2025 có hiệu lực từ 1/3/2026 bắt buộc gắn nhãn nội dung AI và giọng tổng hợp.
+
+---
+
+## Top 10 đợt 2 (công cụ, xếp theo mức khả thi)
 
 | Hạng | Ý tưởng | Tổng | Xác suất | Vì sao | Rủi ro chính | Bước kiểm chứng đầu tiên |
 |---|---|---|---|---|---|---|
@@ -90,6 +109,57 @@ Thang điểm (1–5): **D** = nhu cầu, **C** = khoảng trống cạnh tranh 
 | Bảng giá đất công bố từ 1/1/2026, điều chỉnh hằng năm | Đã xác minh |
 | Nenkin: trần tính hoàn tăng từ 5 lên 8 năm | Đã xác minh, ngày hiệu lực cần kiểm lại |
 | Hàng nhập dưới 1 triệu qua chuyển phát nhanh bỏ miễn VAT từ 18/2/2025 | Đã xác minh (VAT) |
+
+---
+
+## Đợt 3a: 15 ý tưởng game
+
+D = nhu cầu, C = khoảng trống cạnh tranh, W = khả năng kiếm tiền, P = mức thụ động, F = hợp backend solo.
+
+| # | Ý tưởng | D | C | W | P | F | Tổng | Xác suất | Lý do |
+|---|---|---|---|---|---|---|---|---|---|
+| G1 | Wordle tiếng Việt, daily + bảng xếp hạng | 3 | 2 | 2 | 5 | 5 | 17 | TB | Đã có bản mã nguồn mở (minhqnd), quảng cáo web trả ít |
+| G2 | Đuổi hình bắt chữ / ca dao daily | 4 | 2 | 2 | 3 | 3 | 14 | Thấp | Cần nhiều hình ảnh; Zalo hạn chế quảng cáo |
+| G3 | Ma sói với NPC chạy LLM | 3 | 3 | 3 | 2 | 4 | 15 | Thấp | Wolvesville đã chiếm thị trường; tốn chi phí LLM + kiểm duyệt; nhiều người chơi thì cần giấy phép G1 |
+| G4 | Idle tycoon quán phở → Steam | 3 | 3 | 4 | 4 | 4 | 18 | TB | Chơi đơn, bán toàn cầu; nhiều game idle solo bán trên 100k bản |
+| G5 | Tap-to-earn Telegram, đổi voucher | 2 | 1 | 2 | 2 | 4 | 11 | Thấp | Thị trường đã sụp (Hamster từ 300M còn 13M người dùng); đổi voucher vướng luật |
+| G6 | Trivia lịch sử 1v1 async | 3 | 3 | 2 | 3 | 4 | 15 | Thấp | Thuộc G1, cần giấy phép |
+| G7 | Tiến lên đánh với bot | 4 | 1 | 2 | 4 | 4 | 15 | Thấp | Game bài bị cấm cấp phép từ 25/12/2024 |
+| G8 | Browser MMO kinh tế kiểu Torn | 2 | 3 | 3 | 1 | 5 | 14 | Thấp | Tốn công vận hành; G1 |
+| G9 | Roguelike daily seed | 2 | 3 | 2 | 4 | 4 | 15 | Thấp | Ngách nhỏ, cần cảm giác chơi và đồ họa |
+| G10 | Truyện tương tác AI cổ tích Việt | 3 | 3 | 3 | 3 | 4 | 16 | TB | AI Dungeon ARR khoảng $1,4–1,8M; phải kiểm soát chi phí token |
+| G11 | Hybrid-casual block puzzle | 5 | 1 | 4 | 4 | 2 | 16 | Thấp | Phải mua user (UA) và cần art, không hợp làm solo |
+| G12 | Escape room chữ co-op | 2 | 4 | 2 | 3 | 4 | 15 | Thấp | Nhu cầu nhỏ; G1 |
+| G13 | Đấu giá điểm ảo | 2 | 2 | 2 | 2 | 4 | 12 | Thấp | Gần với cờ bạc |
+| G14 | Daily toán cho học sinh | 4 | 3 | 3 | 4 | 5 | 19 | TB | Nerdle sống được nhờ quảng cáo; bán cho trường thì chậm |
+| G15 | Thẻ sưu tầm gacha | 3 | 2 | 3 | 3 | 4 | 15 | Thấp | Vướng quy định vật phẩm ảo |
+
+## Đợt 3b: 20 ý tưởng app tiêu dùng
+
+| # | Ý tưởng | Đối thủ / đối chứng | D | C | W | P | F | Tổng | Xác suất |
+|---|---|---|---|---|---|---|---|---|---|
+| A1 | Thầy Bói AI (tử vi chat) | AItuvi, LUHO, Tử Vi của Tôi; Co-Star ~$400k/tháng | 5 | 2 | 3 | 3 | 5 | 18 | TB |
+| A2 | Zalo Wrapped | Chưa có; chưa rõ định dạng file export của Zalo | 3 | 4 | 2 | 4 | 4 | 17 | Thấp |
+| A3 | Rating pickleball | Picki, Reclub, VPickleball, ThePickleHub | 4 | 2 | 3 | 2 | 4 | 15 | Thấp |
+| A4 | Widget cặp đôi | inlove, Been Love Memory; Locket ~$13,5M/năm | 3 | 2 | 3 | 4 | 2 | 14 | Thấp |
+| A5 | Ảnh AI Tết/áo dài | Gemini miễn phí; Remini ~$7,5M/tháng | 4 | 2 | 3 | 3 | 5 | 17 | TB |
+| A6 | Extension phụ đề song ngữ | Language Reactor $5,95/tháng | 3 | 3 | 3 | 4 | 4 | 17 | TB |
+| A7 | Bot fandom K-pop | FanPlus, CHOEAEDOL | 2 | 4 | 2 | 2 | 5 | 15 | Thấp |
+| A8 | Giờ câu cá | Lịch thủy triều VN; Fishbrain ~$1M/tháng | 3 | 3 | 3 | 4 | 4 | 17 | TB |
+| A9 | Thẻ Hợp Tuổi | lichngaytot, tuvi.vn, xemtuong (SEO lớn) | 5 | 1 | 1 | 5 | 5 | 17 | TB (phễu kéo traffic) |
+| A10 | Dự đoán bóng đá bạn bè | Superbru (miễn phí) | 3 | 2 | 1 | 2 | 4 | 12 | Thấp |
+| A11 | Luyện nói Hàn/Nhật bằng AI voice | ELSA (chỉ tiếng Anh); Speak ARR trên $100M | 4 | 3 | 4 | 4 | 4 | 19 | TB |
+| A12 | Trưa nay ăn gì | — | 3 | 3 | 1 | 4 | 5 | 16 | Thấp |
+| A13 | Báo thức chụp ảnh | Alarmy (82 triệu lượt tải) | 3 | 1 | 3 | 5 | 2 | 14 | Thấp |
+| A14 | Truyện ru ngủ giọng ba mẹ | Oscar Stories chỉ ~$6k/tháng | 4 | 3 | 4 | 3 | 4 | 18 | TB |
+| A15 | Extension tự áp mã Shopee | ShopeeSave; chính sách Chrome 2025 chặn kiểu này | 4 | 3 | 3 | 3 | 4 | 17 | Thấp |
+| A16 | Rizz VN | Rizz ~$190k/tháng | 4 | 2 | 4 | 4 | 5 | 19 | TB |
+| A17 | Âm thanh Việt để ngủ | Vô số app white noise | 3 | 2 | 2 | 5 | 3 | 15 | Thấp |
+| A18 | Nhận diện lan/Koi | PictureThis; PlantAI, PlantSnap | 3 | 3 | 3 | 4 | 4 | 17 | TB |
+| A19 | Photobooth 4-cut online | Web photobooth miễn phí | 3 | 3 | 2 | 4 | 4 | 16 | Thấp |
+| A20 | Sổ pha cà phê | — | 2 | 4 | 2 | 3 | 3 | 14 | Thấp |
+
+Chi phí API tham khảo (09/2026): Gemini 2.5 Flash-Lite $0,10/$0,40 mỗi 1M token (2.5 Flash sẽ ngừng hoạt động ngày 16/10/2026). Ảnh $0,039–0,067/ảnh. ElevenLabs TTS $0,05–0,10 mỗi 1k ký tự.
 
 ---
 
