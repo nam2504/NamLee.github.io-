@@ -236,3 +236,72 @@ Xác suất trên là ước tính chủ quan dựa trên tỷ lệ thành công
 - CPI 2025–2026: https://foxdata.com/en/blogs/2026-mobile-game-user-acquisition-cost-benchmarks-how-much-should-you-spend/ , https://segwise.ai/blog/cpi-ipm-roas-benchmarks-optimizing-ad-spend
 - Doanh thu web portal: https://app.cinevva.com/guides/web-game-monetization , https://developer.crazygames.com/
 - Cow Evolution: https://play.google.com/store/apps/details?id=br.com.tapps.cowevolution
+
+---
+
+## 8. Muốn CÓ LÃI thì phải đổi gì (bản pivot, 09/2026)
+
+### 8.1 Chẩn đoán
+- Trên mobile tự phát hành, LTV chỉ bằng 0,25–0,35 lần CPI. Muốn có lãi phải tăng LTV **3–4 lần**. Đó là trình độ của studio có đội LiveOps, UA và IAP sâu, không phải của solo dev.
+- Vì vậy vấn đề nằm ở **mô hình kinh doanh**. Chỉnh cơ chế trong game không cứu được.
+
+### 8.2 Quyết định: pivot sang "Desktop Idle Aquarium" trên Steam (bán đứt)
+- **Hình thức:** một dải bể cá nằm dưới đáy màn hình, luôn nổi trên các cửa sổ khác. Sinh vật biển sâu bơi, ghép và đột biến trong lúc người dùng làm việc.
+- **Tiền lệ thị trường:** Rusty's Retirement cùng kiểu "idle ở cạnh màn hình" bán khoảng 550k bản tính đến 7/2025, thu khoảng $5/bản sau refund, giảm giá và giá theo vùng. Thành công của game này khiến Steam tổ chức hẳn một Next Fest chủ đề idle năm 2025.
+- **Vì sao hợp:**
+  - Không tốn tiền mua user (UA). Steam tự đẩy game qua wishlist, Next Fest và các fest theo chủ đề.
+  - Tauri/Electron + Phaser tạo được cửa sổ trong suốt luôn nổi trên cùng (transparent, always-on-top), đúng stack web của bạn.
+  - Không có quảng cáo hay IAP nên không vướng NĐ147.
+- **Giá bán:** $3,99–4,99. Thêm DLC skin/biome ($1,99) và gói Supporter. Không có quảng cáo.
+
+### 8.3 Thay đổi thiết kế
+
+| Hạng mục | Bản cũ (mobile ads) | Bản mới (Steam desktop) |
+|---|---|---|
+| Kiếm tiền | Rewarded ads + IAP | Bán đứt + DLC cosmetic |
+| Vòng chơi | Người chơi phải tương tác | **Idle trước hết**: game tự chạy, chỉ cần click ghép vài lần mỗi giờ |
+| Welcome Back ×3, Storm có quảng cáo | Có | Bỏ. Storm thành sự kiện miễn phí để người chơi liếc màn hình |
+| Hook | Xem quảng cáo | Bộ sưu tập + Steam Achievements + Trading Cards |
+| Nội dung | 30 sinh vật | Khoảng 60 sinh vật / 4 biome lúc launch, thêm biome qua update/DLC |
+| Tính năng desktop | — | Chỉnh kích thước dải bể, click xuyên qua, chế độ Pomodoro/focus |
+
+### 8.4 Stage-gate mới
+1. **Tuần 1–2:** 3 video TikTok "bể cá đột biến trên desktop" để test chủ đề (giữ Gate 0).
+2. **Tuần 3–6:** dựng prototype, sau đó **mở trang Steam sớm**. Capsule art rất quan trọng, ngân sách $200–500.
+   - Gate: có ≥ 2.000 wishlist sau 8 tuần mở trang.
+3. **Tuần 7–16:** làm bản demo và đăng lên CrazyGames/itch làm phễu kéo wishlist, rồi tham gia **Steam Next Fest** (dự kiến tháng 2/2027).
+   - Gate: có ≥ 7.000 wishlist trước ngày launch.
+   - Dưới 3.000 wishlist thì dừng Steam, chỉ giữ bản web.
+4. **Launch** kèm giảm giá 10–20% khi ra mắt, sau đó làm update/DLC mỗi quý.
+5. **Mobile:** không tự chạy UA. Gửi bản prototype cho các publisher như Homa, Voodoo, Kwalee. Họ tự làm CPI test và bỏ tiền UA, đổi lại lấy phần doanh thu.
+
+### 8.5 Unit economics trên Steam
+
+| Hạng mục | Giá trị |
+|---|---|
+| Giá niêm yết | $4,99 |
+| Sau Steam 30%, refund, giảm giá, giá theo vùng | ~$2,3–2,8 mỗi bản |
+| Thuế giữ lại 30% trên phần doanh thu từ Mỹ (VN–Mỹ chưa có hiệp định thuế có hiệu lực) | ~$2,0–2,5 mỗi bản |
+| Điểm hòa vốn (chi phí $1,5–2,5k) | ~800–1.200 bản |
+
+Kịch bản:
+
+| Kịch bản | Số bản bán | Net |
+|---|---|---|
+| Xấu | < 500 bản (khoảng 2/3 game Steam thu < $1k) | Lỗ |
+| Cơ sở | 3–5k bản | $7–12k |
+| Tốt | 20k bản | ~$45k |
+| Hit | 100k+ bản | Hiếm, nhưng có tiền lệ cùng format |
+
+Wishlist cho phép **dừng sớm và rẻ** trước khi làm full game. Đây là lợi thế lớn nhất so với mobile.
+
+### 8.6 Nếu vẫn muốn mobile tự phát hành: điều kiện có lãi
+- ARPDAU Tier-1 phải ≥ $0,25:
+  - IAP chiếm ≥ 40% doanh thu.
+  - Season pass 30 ngày.
+  - Mua trực tiếp, không bán lootbox trả tiền.
+- D30 phải ≥ 10%, nhờ sự kiện hằng tuần và album sưu tầm theo mùa.
+- CPI phải ≤ $0,6 ở Tier-1. Muốn vậy creative phải có IPM (số lượt cài trên 1.000 lượt hiển thị quảng cáo) cao, tức là phải test creative liên tục.
+- Chỉ khi đạt đủ 3 điều kiện trên mới scale UA. Solo dev rất khó đạt cả ba.
+
+Nguồn: https://newsletter.gamediscover.co/p/how-rustys-retirement-idle-farmed , https://en.wikipedia.org/wiki/Rusty's_Retirement , https://game-developers.org/2025-steam-game-revenue-distribution , https://www.deconstructoroffun.com/blog/2024/6/3/voodoos-secret-sauce-from-0-to-250m-hybridcasual-revenue-in-3-years
