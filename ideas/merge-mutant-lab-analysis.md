@@ -350,3 +350,75 @@ So sánh: thuê freelancer code một game tương đương ước khoảng vài
 3. Mỗi lần giao một feature nhỏ → chạy test → chơi thử → commit. Không giao task kiểu "làm cả game".
 4. Có **save versioning + migration** ngay từ đầu. Mất save của người chơi đồng nghĩa với review xấu và refund.
 5. Mỗi feature dùng `/code-review`. Mỗi tuần refactor một lần để code không thối rữa.
+
+---
+
+## 10. Pipeline đa-AI (Gemini, ChatGPT, Claude…): review khả thi, chi phí, thời gian (09/2026)
+
+### 10.1 Phân vai từng AI
+
+| Việc | Công cụ | Ghi chú |
+|---|---|---|
+| Code (toàn bộ) | **Claude Code**, chỉ dùng 1 agent | Không trộn ChatGPT/Gemini viết code vào cùng codebase: vỡ quy ước, lỗi chồng lỗi |
+| Hình sinh vật | **Gemini (Nano Banana Pro / Nano Banana 2)** | Giữ nhất quán nhân vật với tối đa 14 ảnh tham chiếu. Giá $0,039–0,134/ảnh, Batch API giảm 50% |
+| Khóa style cho 60+ sinh vật | Scenario (train LoRA, từ ~$45/tháng) **hoặc** style bible + ảnh tham chiếu trên Gemini | Rủi ro lớn nhất về art là **không đồng bộ style** |
+| Chuyển động | **Tween bằng code** (nhấp nhô, co giãn, xoay nhẹ) từ 1 ảnh | Thay cho sprite sheet, gần như miễn phí |
+| Hiệu ứng, VFX | Particle bằng Phaser | Miễn phí |
+| Lore, fun fact, text UI | ChatGPT hoặc Gemini | Phải **tự fact-check** fun fact sinh vật biển |
+| Nhạc và SFX | **ElevenLabs** (Music API $0,15/phút; gói Creator ~$22/tháng) | Suno rẻ hơn ($10/tháng) nhưng **giấy phép chưa rõ** vì đang có kiện tụng. Tránh dùng Suno cho sản phẩm thương mại |
+| Capsule Steam | AI phác thảo → **người vẽ/chỉnh** ($150–300) | Asset quyết định tỷ lệ click trang Steam |
+| Trailer | Quay gameplay thật + CapCut. **Không** dùng video Veo làm trailer | Steam cấm trailer gây hiểu nhầm. Video AI cũng phải khai báo |
+| Mô tả Steam, bài TikTok | Claude, ChatGPT hoặc Gemini | — |
+
+### 10.2 Rủi ro riêng của art AI
+
+1. **AI stigma trên Steam.**
+   - Game có khai báo AI nhận ít review, ít wishlist và ít doanh số hơn.
+   - Khoảng 8% người chơi tránh hẳn game có khai báo AI.
+   - 30,8% game mới đã khai báo AI (7/2026), nên người chơi quen dần. Dù vậy, với game mà **art là điểm bán chính**, đây vẫn là rủi ro lớn.
+2. **Bản quyền.** Ảnh thuần AI khó được bảo hộ bản quyền, người khác có thể clone sinh vật. Nếu có người chỉnh tay thì dễ bảo vệ hơn.
+3. **Nghĩa vụ khai báo.**
+   - Steam (quy định từ 1/2026): **bắt buộc khai báo** nội dung AI mà người chơi nhìn/nghe thấy. Code viết bằng AI **không** cần khai báo.
+   - Luật AI VN: gắn nhãn nội dung do AI tạo.
+4. **Giảm thiểu:**
+   - Art direction thống nhất: 1 style đơn giản (flat/vector hoặc pixel) để giấu lỗi AI.
+   - Chỉnh tay tất cả sinh vật (màu, viền, lỗi giải phẫu).
+   - Capsule do người vẽ.
+   - Khai báo minh bạch: "AI-assisted, hand-edited".
+
+### 10.3 Chi phí (khoảng 6 tháng lịch)
+
+| Hạng mục | Tối thiểu | Khuyến nghị |
+|---|---|---|
+| Claude (Max 2 tháng lúc build + Pro 4 tháng; giá kiểm tra lại) | ~$180 | ~$280 |
+| Google AI Pro $19,99/tháng (năm đầu giảm 50%): Gemini, Nano Banana, Veo | ~$60 | ~$120 |
+| Gemini Image API để tạo hàng loạt (60 sinh vật × ~10 lần thử) | ~$25 | ~$80 |
+| Scenario/Ludo (1–2 tháng, nếu cần khóa style) | $0 | ~$100 |
+| ElevenLabs (1–2 tháng) | ~$22 | ~$44 |
+| ChatGPT Plus | $0 (dùng Gemini/Claude thay) | $0–20 |
+| Capsule do người vẽ | $0 | $150–300 |
+| Artist chỉnh tay sinh vật (tùy chọn) | $0 | $0–300 |
+| Steam Direct | $100 | $100 |
+| **Tổng** | **~$400** | **~$900–1.300** |
+
+So với bản thuê art hoàn toàn ($1.000–2.300), bản này giảm khoảng 40–60%.
+
+### 10.4 Thời gian build
+Giả định làm part-time 15–20 giờ/tuần.
+
+| Tuần | Việc | Gate |
+|---|---|---|
+| 1–2 | Style bible, 10 sinh vật AI, 3 video TikTok | Gate 0: sức hút chủ đề |
+| 3–5 | Prototype: bể cá desktop trong suốt + merge + kinh tế | Tự chơi thấy "nghiện" |
+| 6–7 | Capsule, screenshot, mở trang Steam "Coming Soon" | — |
+| 8–16 | 60 sinh vật, 4 biome, Steamworks, bản demo, polish | ≥ 2.000 wishlist ở tuần 14 |
+| 17–20 | Next Fest (dự kiến 2/2027) | ≥ 7.000 wishlist |
+| ~21–24 | Launch (khoảng 3–4/2027) | — |
+
+- **Tổng công sức:** khoảng 250–350 giờ.
+- **Code:** khoảng 30–40%. **Art + chỉnh style:** khoảng 25%. **Marketing:** khoảng 25%. **Test/polish:** phần còn lại.
+- **Không rút ngắn được** thời gian tích wishlist.
+
+### 10.5 Khuyến nghị quyết định
+- **Chưa quyết định cả dự án. Chỉ quyết định Stage 0:** 2 tuần, khoảng $20–50, khoảng 30 giờ.
+- Nếu Stage 0 trượt thì mất rất ít. Nếu đạt thì cam kết tiếp đến gate wishlist ở tuần 14 (tổng chi tối đa khoảng $500).
