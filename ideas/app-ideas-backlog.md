@@ -169,3 +169,28 @@ Chi phí API tham khảo (09/2026): Gemini 2.5 Flash-Lite $0,10/$0,40 mỗi 1M t
 - Công cụ "chuyển đổi file" thuần backend + SEO đuôi dài (cùng kiểu với #1, #2): ví dụ file BHXH, bảng lương, xuất dữ liệu từ eTax/VNeID.
 - Cộng đồng người Việt ở nước ngoài (Nhật, Hàn, Đài, Úc): thủ tục giấy tờ, hoàn thuế, chuyển tiền.
 - Luôn kiểm tra trước: MISA, KiotViet, Sapo, MoMo, Zalopay, VNeID, eTax Mobile đã có bản miễn phí chưa. Nếu có, loại ngay.
+
+---
+
+## Review: Merge Mutant Lab (idle merge, thiết kế do AI khác đề xuất), 09/2026
+
+Kết luận: **Có điều kiện.** Các cơ chế quảng cáo đều theo chuẩn thể loại, nhưng kế hoạch launch có rủi ro cao và phần tiền số chưa được chứng minh.
+
+- Giữ lại:
+  - Welcome Back x3.
+  - Mutation Storm (2 lần/ngày, có push notification).
+  - Expedition khi app đang tắt.
+- Sửa:
+  - Mở Expedition sớm hơn, ở level 3–5. Nếu để level 10, phần lớn người chơi rời game trước khi thấy tính năng này.
+  - Bỏ "xem trước quái Lv30". Tính năng này làm lộ phần thưởng chính của game merge.
+- Con số ">85% bấm xem quảng cáo" không có nguồn. Nên lập kế hoạch với số lượt xem quảng cáo thưởng khoảng 2–4 lượt mỗi người chơi mỗi ngày.
+- Chỉ dùng quảng cáo thưởng thì doanh thu mỏng: 1.000 người chơi/ngày × 3 lượt xem × eCPM $10 chỉ được khoảng $30/ngày. Cần thêm gói mua trong game (IAP): gỡ quảng cáo, starter pack.
+- Mua source rồi reskin:
+  - Google Play có chính sách chống app spam/lặp nội dung.
+  - Unity là stack mới với người code backend/web.
+  - Nên làm bản HTML5 trước, đưa lên CrazyGames/Poki để kiểm chứng, rồi mới lên mobile.
+- Nút thắt thật là phân phối: gần như không có lượt cài tự nhiên nếu không trả tiền quảng cáo.
+- Pháp lý:
+  - Giữ game offline chơi một mình để không phải xin giấy phép G1 theo NĐ147.
+  - Nếu dùng hình do AI tạo, gắn nhãn theo Luật AI.
+- Ngưỡng dừng dự án: D1 < 30% hoặc D7 < 8% sau khoảng 500 người chơi → dừng hoặc làm lại vòng chơi chính.
