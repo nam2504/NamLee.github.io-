@@ -305,3 +305,48 @@ Wishlist cho phép **dừng sớm và rẻ** trước khi làm full game. Đây 
 - Chỉ khi đạt đủ 3 điều kiện trên mới scale UA. Solo dev rất khó đạt cả ba.
 
 Nguồn: https://newsletter.gamediscover.co/p/how-rustys-retirement-idle-farmed , https://en.wikipedia.org/wiki/Rusty's_Retirement , https://game-developers.org/2025-steam-game-revenue-distribution , https://www.deconstructoroffun.com/blog/2024/6/3/voodoos-secret-sauce-from-0-to-250m-hybridcasual-revenue-in-3-years
+
+---
+
+## 9. Vibe code bằng Claude Code: khả thi & chi phí (09/2026)
+
+### 9.1 Mức độ AI làm được theo từng mảng việc
+
+| Mảng việc | Tỷ lệ AI làm được | Người phải tự làm |
+|---|---|---|
+| Logic game, merge, kinh tế, prestige, save/load | 85–90% | Review, chơi thử |
+| Script mô phỏng kinh tế (Python) | 90% | Chọn con số "cảm thấy đúng" |
+| Tauri: cửa sổ trong suốt, click-through, luôn nổi trên cùng | 70% | Test trên máy Windows thật: nhiều màn hình, DPI, taskbar |
+| Hiệu năng khi chạy nền (CPU < 1–2%) | 60% | Đo bằng Task Manager, giới hạn FPS khi bị che |
+| Tích hợp Steamworks (achievements, cloud save) | 70% | Tạo app trên Steamworks, test bằng tài khoản thật |
+| Game feel/juice (animation, âm thanh, reveal) | 50% | Chơi và chỉnh nhiều vòng |
+| Art sinh vật, capsule Steam | ~0–20% | Thuê artist, hoặc AI image rồi chỉnh tay (phải khai báo AI trên Steam) |
+| Trailer, marketing | 30% (viết kịch bản, copy) | Quay, dựng, đăng |
+
+**Lưu ý:** Claude Code bản cloud/web không test được GUI trên Windows. Cần chạy Claude Code **trên máy local** để build và chạy app Tauri.
+
+### 9.2 Thời gian
+- Phần code rút từ khoảng 10 tuần xuống **3–5 tuần**.
+- Tổng lịch gần như không đổi, vì nút thắt nằm ở chỗ **tích wishlist 3–6 tháng** và art.
+
+### 9.3 Chi phí (4–5 tháng)
+
+| Hạng mục | Chi phí |
+|---|---|
+| Claude, gói subscription (Max ~2–3 tháng lúc build, Pro lúc vận hành; giá kiểm tra tại claude.com/pricing) | ~$250–400 |
+| (Phương án thay: API trả theo token, Opus 5.5 $4/$20, Sonnet 5.5 $2/$10 mỗi 1M token) | Dùng nặng hằng ngày thường đắt hơn subscription |
+| Art 60 sinh vật | $300–1.000 |
+| Capsule art | $200–500 |
+| Steam Direct | $100 (hoàn lại khi doanh thu > $1k) |
+| Âm thanh | $0–50 |
+| Trailer | $0–200 |
+| **Tổng** | **~$1.000–2.300** |
+
+So sánh: thuê freelancer code một game tương đương ước khoảng vài nghìn USD trở lên (ước tính, chưa khảo giá).
+
+### 9.4 Quy trình vibe code nên dùng
+1. `CLAUDE.md` chứa GDD rút gọn, stack, quy ước code, các lệnh build/test.
+2. Tách lõi kinh tế thành module thuần TypeScript, không phụ thuộc Phaser. Viết unit test và sim cho module này.
+3. Mỗi lần giao một feature nhỏ → chạy test → chơi thử → commit. Không giao task kiểu "làm cả game".
+4. Có **save versioning + migration** ngay từ đầu. Mất save của người chơi đồng nghĩa với review xấu và refund.
+5. Mỗi feature dùng `/code-review`. Mỗi tuần refactor một lần để code không thối rữa.
