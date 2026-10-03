@@ -702,11 +702,13 @@ Ghi chú:
 | 1 | `cr_sun_01` | Saucelet / Sứa Đĩa Nhí | S1 | Moon jelly ephyra (*Aurelia aurita*) | Đĩa 8 thùy hình sao (gốc) | PAT | DRIFT_PULSE | 40 |
 | 2 | `cr_sun_02` | Moonbun / Sứa Bánh Trăng | S2 | Moon jelly non | Vòm chuông tròn + 4 vòng hình cỏ 4 lá | PAT | DRIFT_PULSE | 44 |
 | 3 | `cr_sun_03` | Cloverbell / Sứa Cỏ Bốn Lá | S3 | Moon jelly trưởng thành | 4 oral arm xoăn dài rủ xuống | TEN | DRIFT_PULSE | 50 |
-| 4 | `cr_sun_04` | Sailbloop / Sứa Buồm | S4 | + *Physalia physalis* (man o' war) | Phao khí với buồm mào trên đỉnh | FIN | DRIFT_PULSE (+ sail sway) | 56 |
-| 5 | `cr_sun_05` | Regatta / Đô Đốc Buồm | S5 | Man o' war "vương giả" | Buồm đôi + ruy băng xúc tu xanh + aura | FIN | DRIFT_PULSE | 64 |
-| 6 | `cr_sun_06` | Dragonling / Sên Rồng Xanh | S1 (Act II) | Blue dragon sea slug (*Glaucus atlanticus*) | Đổi family; **heritage**: đầu cerata có chấm xanh của Regatta | TEN | GLIDE_FLAP | 52 |
+| 4 | `cr_sun_04` | Sailbloop / Sứa Buồm | S4 | + *Physalia physalis* (man o' war) | Phao khí với buồm mào trên đỉnh | TEN (+FIN) | DRIFT_PULSE (+ sail sway) | 56 |
+| 5 | `cr_sun_05` | Regatta / Đô Đốc Buồm | S5 | Man o' war "vương giả" | 4 ruy băng xúc tu teal có hạt deep blue (+ aura) | TEN (+FIN) | DRIFT_PULSE | 64 |
+| 6 | `cr_sun_06` | Dragonling / Sên Rồng Xanh ★hero | S1 (Act II) | Blue dragon sea slug (*Glaucus atlanticus*) | Đổi family; **heritage**: đầu cerata có chấm xanh của Regatta | TEN | GLIDE_FLAP | 52 |
 
 Logic: ephyra → medusa là vòng đời thật; Lab "splice" thêm phao buồm của man o' war (mutation nói rõ là hư cấu, vì man o' war là siphonophore, không phải medusa); *Glaucus* thật sự ăn man o' war và tích tế bào gai của con mồi để tự vệ, nên leap sang sên rồng là hợp lý và là fun fact hay.
+
+> **v0.2 (sync với [`creatures/sunlit-L01-L10.md`](creatures/sunlit-L01-L10.md) mục 1.2):** L4–L5 đổi axis FIN → TEN chính (luật 1 axis/Act cho S3–S5); L5 chỉ giữ 1 big feature (ruy băng). Spec đầy đủ L1–L10 nằm ở file đó; nếu lệch, file spec thắng.
 
 ### 12.2 Spec đầy đủ: `cr_sun_01` Saucelet
 
@@ -743,7 +745,7 @@ Logic: ephyra → medusa là vòng đời thật; Lab "splice" thêm phao buồm
 | Lane | mid (y 30–60%) |
 | Movement preset | DRIFT_PULSE |
 | Param overrides | `periodMin 1400, periodMax 1900` (nhanh hơn con lớn), `squash 0.84, stretch 1.08, rise 8, speedMin 3, speedMax 6` |
-| Idle behaviors | blink (3–6s), look, signature `spin_wobble`: `angle 0→360` 1600 `Sine.easeInOut` mỗi 40–90s (ephyra thật xoay khi bơi) |
+| Idle behaviors | blink (3–6s), look, signature `double_pulse`: 2 nhịp co chuông nhanh (scaleY 0.8, 180ms/nhịp) rồi trôi 1.5s, mỗi 40–90s (flourish của game, không phải claim sinh học; R5) |
 | Interactions | hover: approach 20px + look; click: squash + emote ♥; schooling: no (nhưng ≥ 4 Saucelet thì bơi lệch pha để không đồng bộ) |
 | Active hours | diurnal |
 
@@ -811,7 +813,7 @@ Tất cả ô để trống đến khi art xong (xem template 11.1).
     "lane": "mid", "preset": "DRIFT_PULSE",
     "params": { "periodMin": 1400, "periodMax": 1900, "squash": 0.84, "stretch": 1.08, "rise": 8, "speedMin": 3, "speedMax": 6 },
     "idle": ["blink", "look"],
-    "signature": { "id": "spin_wobble", "desc": "full slow spin like a real ephyra", "everyMs": [40000, 90000] },
+    "signature": { "id": "double_pulse", "desc": "2 quick bell pulses then coast; game flourish, no biology claim", "everyMs": [40000, 90000] },
     "hover": "approach", "schooling": false, "activeHours": "diurnal"
   },
   "art": {
@@ -844,15 +846,15 @@ Cột `Status`: `—` chưa làm · `spec` · `gen` · `edit` · `rig` · `✔` 
 | Lv | ID | Act-S | Family | EN | VN | Real anchor | Axis | Preset | Size | Status |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | cr_sun_01 | I-1 | JEL | Saucelet | Sứa Đĩa Nhí | *Aurelia aurita* ephyra | PAT | DRIFT_PULSE | 40 | spec |
-| 2 | cr_sun_02 | I-2 | JEL | Moonbun | Sứa Bánh Trăng | *Aurelia aurita* juv. | PAT | DRIFT_PULSE | 44 | — |
-| 3 | cr_sun_03 | I-3 | JEL | Cloverbell | Sứa Cỏ Bốn Lá | *Aurelia aurita* | TEN | DRIFT_PULSE | 50 | — |
-| 4 | cr_sun_04 | I-4 | JEL | Sailbloop | Sứa Buồm | *Physalia physalis* (splice) | FIN | DRIFT_PULSE | 56 | — |
-| 5 | cr_sun_05 | I-5 | JEL | Regatta | Đô Đốc Buồm | *Physalia physalis* | FIN | DRIFT_PULSE | 64 | — |
-| 6 | cr_sun_06 | II-1 | MOL | Dragonling | Sên Rồng Xanh | *Glaucus atlanticus* | TEN | GLIDE_FLAP | 52 | — |
-| 7 | cr_sun_07 | II-2 | MOL | | | | | GLIDE_FLAP | 56 | — |
-| 8 | cr_sun_08 | II-3 | MOL | | | sea butterfly (pteropod)? | | GLIDE_FLAP | 62 | — |
-| 9 | cr_sun_09 | II-4 | MOL | | | | | GLIDE_FLAP | 68 | — |
-| 10 | cr_sun_10 | II-5 | MOL | | | | | GLIDE_FLAP | 76 | — |
+| 2 | cr_sun_02 | I-2 | JEL | Moonbun | Sứa Bánh Trăng | *Aurelia aurita* juv. | PAT | DRIFT_PULSE | 44 | spec |
+| 3 | cr_sun_03 | I-3 | JEL | Cloverbell | Sứa Cỏ Bốn Lá | *Aurelia aurita* | TEN | DRIFT_PULSE | 50 | spec |
+| 4 | cr_sun_04 | I-4 | JEL | Sailbloop | Sứa Buồm | *Aurelia* × *Physalia physalis* (splice) | TEN (+FIN) | DRIFT_PULSE | 56 | spec |
+| 5 | cr_sun_05 | I-5 | JEL | Regatta | Đô Đốc Buồm | *Physalia physalis* | TEN (+FIN) | DRIFT_PULSE | 64 | spec |
+| 6 | cr_sun_06 | II-1 | MOL | Dragonling ★hero | Sên Rồng Xanh | *Glaucus atlanticus* | TEN | GLIDE_FLAP | 52 | spec |
+| 7 | cr_sun_07 | II-2 | MOL | Fandrake | Sên Rồng Quạt | *Glaucus atlanticus* adult (ref *G. marginatus*) | TEN | GLIDE_FLAP | 56 | spec |
+| 8 | cr_sun_08 | II-3 | MOL | Bluewing | Sên Rồng Bướm | *Glaucus* × sea butterfly *Limacina helicina* | FIN | GLIDE_FLAP | 62 | spec |
+| 9 | cr_sun_09 | II-4 | MOL | Bubbloon | Sên Bè Bọt | *Glaucus* × violet snail *Janthina janthina* | FIN (+PAT) | GLIDE_FLAP | 68 | spec |
+| 10 | cr_sun_10 | II-5 | MOL | Armada | Rồng Hạm Đội | *Glaucus* × sea angel *Clione limacina* | FIN (+PAT) | GLIDE_FLAP | 76 | spec |
 | 11 | cr_sun_11 | III-1 | FSH | Spikelet | Cá Mặt Trăng Gai | *Mola mola* larva (có gai thật) | SPK | DART | 64 | — |
 | 12 | cr_sun_12 | III-2 | FSH | | | | | DART | 70 | — |
 | 13 | cr_sun_13 | III-3 | FSH | | | | | BASK_GLIDE | 78 | — |
@@ -948,17 +950,17 @@ Bản khung dùng được để sản xuất. Dưới đây là các điểm re
 
 | # | Vấn đề | Mức | Đề xuất |
 |---|---|---|---|
-| R1 | **Prestige đổi zone hay mở thêm bể?** Mục 2 nói "zone mở bằng Prestige" nhưng chưa nói con zone cũ còn không. Ảnh hưởng save schema, UI, kinh tế | P0, chốt trước khi code | Khuyến nghị: Prestige reset con + tiền, **mở thêm zone như "tab bể" mới**, bách khoa giữ nguyên. Người chơi chọn zone đang hiển thị trên strip (1 zone/lần để giữ hiệu năng) |
-| R2 | **Thiếu "hero creature" cho marketing.** Capsule, TikTok, icon cần 1 gương mặt đại diện, mà con hút nhất (dumbo octopus) nằm ở zone 4, người chơi thấy muộn | P0 cho Stage 0 | Chọn 1 hero ở Sunlit (Saucelet hoặc Dragonling) làm mascot/icon; capsule ghép 1 con mỗi zone; dumbo dùng làm "teaser" trong trailer |
+| R1 ✅ | **Prestige đổi zone hay mở thêm bể?** Mục 2 nói "zone mở bằng Prestige" nhưng chưa nói con zone cũ còn không. Ảnh hưởng save schema, UI, kinh tế | P0, chốt trước khi code | Khuyến nghị: Prestige reset con + tiền, **mở thêm zone như "tab bể" mới**, bách khoa giữ nguyên. Người chơi chọn zone đang hiển thị trên strip (1 zone/lần để giữ hiệu năng). **ĐÃ CHỐT (10/2026)** đúng như khuyến nghị |
+| R2 ✅ | **Thiếu "hero creature" cho marketing.** Capsule, TikTok, icon cần 1 gương mặt đại diện, mà con hút nhất (dumbo octopus) nằm ở zone 4, người chơi thấy muộn | P0 cho Stage 0 | Chọn 1 hero ở Sunlit (Saucelet hoặc Dragonling) làm mascot/icon; capsule ghép 1 con mỗi zone; dumbo dùng làm "teaser" trong trailer. **ĐÃ CHỐT (10/2026):** hero = **Dragonling `cr_sun_06`** (capsule, icon 32px, 3 emote: xem Hero notes trong spec file); Saucelet vẫn là con đầu tiên người chơi thấy |
 | R3 | **Ước tính 5–6h/Act lạc quan** cho 2 Act đầu (còn đang dò style) | P1 | Dự trù 10–12h cho Act I Sunlit (chốt STYLE-01..03), 6–8h cho các Act sau. Tổng art ~80–100h, vẫn nằm trong 250–350h của mục 10.4 analysis |
 | R4 | **Độ sâu thật lệch nhãn zone:** scaly-foot snail sống ở miệng thủy nhiệt ~2.400–2.900 m, không phải 4.000–6.000 m | P2 | Giữ zone "Abyss & Vent" là stylized, nhưng `realAnchor.depthM` ghi số thật của loài; không ghi "sống ở độ sâu của zone" trong fun fact |
-| R5 | **Claim cần kiểm:** "ephyra thật xoay khi bơi" (12.2) và "Mola ăn chủ yếu sinh vật keo" (có, nhưng ăn cả cá nhỏ, giáp xác) | P1 | Để `factStatus: draft` cho tới khi đọc nguồn; dùng chữ "phần lớn/thường" |
+| R5 ◐ | **Claim cần kiểm:** "ephyra thật xoay khi bơi" (12.2) và "Mola ăn chủ yếu sinh vật keo" (có, nhưng ăn cả cá nhỏ, giáp xác) | P1 | Để `factStatus: draft` cho tới khi đọc nguồn; dùng chữ "phần lớn/thường". Ephyra-spin đã gỡ (thay `double_pulse`); claim *Mola* chờ spec Act III |
 | R6 | **Rủi ro IP cụ thể theo slot:** man o' war ↔ Tentacool/Tentacruel; anglerfish apex ↔ Lanturn; firefly squid ↔ Chinchou-style đèn | P0 cho 3 slot này | Ghi trước vào cột Notes của roster; đổi ít nhất màu chủ + vị trí đèn + hình mắt so với Pokémon tương ứng |
-| R7 | **Vertical slice Stage 0 cần 10 con** nhưng roster mới điền 6 (Sunlit L1–6) | P0 cho bước tiếp | Bước tiếp: điền spec Sunlit L1–10 (Act I + II), gen 10 con, làm 3 TikTok |
+| R7 ✅ | **Vertical slice Stage 0 cần 10 con** nhưng roster mới điền 6 (Sunlit L1–6) | P0 cho bước tiếp | Bước tiếp: điền spec Sunlit L1–10 (Act I + II), gen 10 con, làm 3 TikTok. **Spec xong:** [`creatures/sunlit-L01-L10.md`](creatures/sunlit-L01-L10.md) |
 | R8 | Thiếu art phi-sinh vật: trứng, máy ấp, UI icon, nền strip theo zone | P1 | Ngoài phạm vi bible này; thêm `ui-art-spec.md` khi vào prototype (tuần 3–5) |
 
 **Thứ tự làm tiếp đề xuất:**
-1. Chốt R1 (prestige/zone) và R2 (hero).
-2. Điền spec đầy đủ 10 con Sunlit L1–10 theo template 11.1.
+1. ~~Chốt R1 (prestige/zone) và R2 (hero).~~ Xong.
+2. ~~Điền spec đầy đủ 10 con Sunlit L1–10 theo template 11.1.~~ Xong (v0.1, chờ verify fun fact + Steam search tên).
 3. Gen STYLE-01..03 từ L1, L3, L6, chỉnh tay, khóa STYLE BLOCK v1.
 4. Gen 7 con còn lại, silhouette test, quay 3 TikTok (Stage 0 gate: ≥ 10k view TB/video).
